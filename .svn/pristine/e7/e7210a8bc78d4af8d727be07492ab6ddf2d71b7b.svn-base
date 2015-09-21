@@ -1,0 +1,16 @@
+//
+//  ConfirmZhongchouVC.h
+//  jinerong
+//
+//  Created by carcool on 6/1/15.
+//  Copyright (c) 2015 qinyun. All rights reserved.
+//
+
+#import "JERViewController.h"
+
+@interface ConfirmZhongchouVC : JERViewController
+@property(nonatomic,retain)NSDictionary *data;
+@property(nonatomic,retain)NSDictionary *supportData;
+@property(nonatomic,retain)NSDictionary *m_detailData;
+-(void)supportZhongchouName:(NSString*)name Money:(NSString*)amount Phone:(NSString*)phone Address:(NSString*)address;
+@end

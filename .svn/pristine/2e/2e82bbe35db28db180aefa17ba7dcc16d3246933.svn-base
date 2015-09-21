@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MycenterVC">
+            <connections>
+                <outlet property="imageHead" destination="Epf-EB-WtI" id="EoS-6F-1db"/>
+                <outlet property="labelLogin" destination="CJN-9p-Ct0" id="ZrE-N1-fth"/>
+                <outlet property="labelName" destination="EhK-aX-QFc" id="lk8-Vm-ZKo"/>
+                <outlet property="labelPhone" destination="3Dd-gA-IlZ" id="QNd-5y-Rpu"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GUb-7L-SMd">
+                    <rect key="frame" x="0.0" y="1" width="320" height="70"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="head_fang.png" translatesAutoresizingMaskIntoConstraints="NO" id="ev1-ca-8Dx">
+                            <rect key="frame" x="10" y="10" width="50" height="50"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card.png" translatesAutoresizingMaskIntoConstraints="NO" id="e63-QG-vuH">
+                            <rect key="frame" x="114" y="15" width="15" height="10"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jt_r.png" translatesAutoresizingMaskIntoConstraints="NO" id="00P-zs-3yr">
+                            <rect key="frame" x="289" y="28" width="8" height="13"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="张孝文" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhK-aX-QFc">
+                            <rect key="frame" x="68" y="10" width="57" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="186*******09" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Dd-gA-IlZ">
+                            <rect key="frame" x="68" y="39" width="211" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="点击登录" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJN-9p-Ct0">
+                            <rect key="frame" x="68" y="8" width="136" height="54"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hwt-Ji-Gca">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnPressed:" destination="-1" eventType="touchUpInside" id="YHu-5D-XRd"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Epf-EB-WtI">
+                            <rect key="frame" x="10" y="10" width="50" height="50"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hUA-AI-ANf">
+                    <rect key="frame" x="0.0" y="81" width="320" height="40"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wallet.png" translatesAutoresizingMaskIntoConstraints="NO" id="UIa-HU-LlT">
+                            <rect key="frame" x="21" y="10" width="19" height="20"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我的资金" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97c-pZ-e0C">
+                            <rect key="frame" x="54" y="9" width="218" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jt_r.png" translatesAutoresizingMaskIntoConstraints="NO" id="qT6-Pj-3nr">
+                            <rect key="frame" x="290" y="13" width="8" height="13"/>
+                        </imageView>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZs-pa-00n">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnPressed:" destination="-1" eventType="touchUpInside" id="0N7-l4-pck"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sDe-oj-7ZY">
+                    <rect key="frame" x="0.0" y="122" width="320" height="40"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bid.png" translatesAutoresizingMaskIntoConstraints="NO" id="vdE-g2-RCC">
+                            <rect key="frame" x="21" y="13" width="21" height="13"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我的投资" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqG-zz-7U5">
+                            <rect key="frame" x="54" y="9" width="218" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jt_r.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hyu-3o-n12">
+                            <rect key="frame" x="290" y="13" width="8" height="13"/>
+                        </imageView>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAd-nD-eyE">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnPressed:" destination="-1" eventType="touchUpInside" id="b0Y-jc-YbO"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Za-sZ-BGM">
+                    <rect key="frame" x="0.0" y="204" width="320" height="40"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="borrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="0gU-dv-RJ2">
+                            <rect key="frame" x="24" y="10" width="14" height="20"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="P2P还款" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIJ-LP-Z7c">
+                            <rect key="frame" x="54" y="9" width="218" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jt_r.png" translatesAutoresizingMaskIntoConstraints="NO" id="TKE-2Y-M6A">
+                            <rect key="frame" x="290" y="13" width="8" height="13"/>
+                        </imageView>
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIl-te-MPN">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnPressed:" destination="-1" eventType="touchUpInside" id="VoW-yd-N8X"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vcp-LT-bvr">
+                    <rect key="frame" x="0.0" y="258" width="320" height="40"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="redPackeg.png" translatesAutoresizingMaskIntoConstraints="NO" id="PrX-0Y-35P">
+                            <rect key="frame" x="22" y="10" width="20" height="17"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="优惠红包" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqv-ig-P9I">
+                            <rect key="frame" x="54" y="9" width="218" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jt_r.png" translatesAutoresizingMaskIntoConstraints="NO" id="oZa-f8-Zcn">
+                            <rect key="frame" x="290" y="13" width="8" height="13"/>
+                        </imageView>
+                        <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hde-4S-d3i">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnPressed:" destination="-1" eventType="touchUpInside" id="0eK-cV-rAM"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Neu-Sv-ogk">
+                    <rect key="frame" x="0.0" y="308" width="320" height="40"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting.png" translatesAutoresizingMaskIntoConstraints="NO" id="z1Z-eb-RhA">
+                            <rect key="frame" x="24" y="10" width="17" height="17"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="设置" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcq-Cs-rhC">
+                            <rect key="frame" x="54" y="9" width="218" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jt_r.png" translatesAutoresizingMaskIntoConstraints="NO" id="h3F-7K-N6j">
+                            <rect key="frame" x="290" y="13" width="8" height="13"/>
+                        </imageView>
+                        <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hZ-NF-V0A">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnPressed:" destination="-1" eventType="touchUpInside" id="jjw-8q-H8x"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kWA-bk-Qas">
+                    <rect key="frame" x="0.0" y="163" width="320" height="40"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="search.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zpj-sm-4jU">
+                            <rect key="frame" x="20" y="10" width="20" height="20"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="申请查询" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qc2-cy-JNa">
+                            <rect key="frame" x="54" y="9" width="218" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jt_r.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ojc-bd-eBl">
+                            <rect key="frame" x="290" y="13" width="8" height="13"/>
+                        </imageView>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqs-Fy-LaP">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnPressed:" destination="-1" eventType="touchUpInside" id="KWm-Xh-3fC"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bid.png" width="42" height="26"/>
+        <image name="borrow.png" width="28" height="40"/>
+        <image name="card.png" width="30" height="20"/>
+        <image name="head_fang.png" width="110" height="110"/>
+        <image name="jt_r.png" width="16" height="25"/>
+        <image name="redPackeg.png" width="40" height="34"/>
+        <image name="search.png" width="40" height="40"/>
+        <image name="setting.png" width="34" height="34"/>
+        <image name="wallet.png" width="38" height="40"/>
+    </resources>
+</document>

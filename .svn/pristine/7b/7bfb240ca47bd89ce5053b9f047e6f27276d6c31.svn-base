@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RechargeVC">
+            <connections>
+                <outlet property="btn" destination="Zo6-kz-fXN" id="vHY-Jb-Xa2"/>
+                <outlet property="enterpriseImg" destination="oxf-cW-WXQ" id="B8x-2M-jfp"/>
+                <outlet property="gouImg" destination="QmY-G8-vLP" id="Lgy-VR-W0t"/>
+                <outlet property="labelBank" destination="bCX-nk-KS9" id="PS3-HD-4BA"/>
+                <outlet property="lineView0" destination="mTf-Zd-kUl" id="9G8-jC-DYy"/>
+                <outlet property="lineView1" destination="u0U-zD-YdL" id="Ndq-sU-2Mg"/>
+                <outlet property="personImg" destination="1K3-gv-6qA" id="xlx-j4-1Xv"/>
+                <outlet property="textFiedMoney" destination="sVj-Rk-4rZ" id="gjx-Kx-8AI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ETv-a7-exU">
+                    <rect key="frame" x="0.0" y="10" width="320" height="40"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="充值金额" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfE-Xv-CqS">
+                            <rect key="frame" x="8" y="9" width="65" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入充值金额" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sVj-Rk-4rZ">
+                            <rect key="frame" x="76" y="5" width="239" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="充值方式" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1c-Dn-dy3">
+                    <rect key="frame" x="8" y="53" width="65" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pcm-Me-IJZ">
+                    <rect key="frame" x="0.0" y="77" width="320" height="120"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mTf-Zd-kUl">
+                            <rect key="frame" x="0.0" y="40" width="320" height="1"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u0U-zD-YdL">
+                            <rect key="frame" x="0.0" y="80" width="320" height="1"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gou_in_circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="1K3-gv-6qA">
+                            <rect key="frame" x="15" y="12" width="15" height="15"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="oxf-cW-WXQ">
+                            <rect key="frame" x="15" y="52" width="15" height="15"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="个人网上银行充值" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtX-Pg-OHY">
+                            <rect key="frame" x="48" y="9" width="233" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="企业网上银行充值" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mq6-PX-4Pp">
+                            <rect key="frame" x="48" y="49" width="233" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="选择银行" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z21-YU-xWi">
+                            <rect key="frame" x="15" y="91" width="65" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="选择银行卡" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCX-nk-KS9">
+                            <rect key="frame" x="88" y="91" width="183" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jt_r.png" translatesAutoresizingMaskIntoConstraints="NO" id="GiO-gF-DYj">
+                            <rect key="frame" x="294" y="95" width="8" height="13"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QaQ-Pz-iYd">
+                            <rect key="frame" x="0.0" y="5" width="320" height="30"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="selectType:" destination="-1" eventType="touchUpInside" id="6s4-jI-KZy"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1U-aD-HbZ">
+                            <rect key="frame" x="0.0" y="44" width="320" height="30"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="selectType:" destination="-1" eventType="touchUpInside" id="acS-RM-k59"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffv-hE-gMj">
+                            <rect key="frame" x="0.0" y="87" width="320" height="30"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="selectBank:" destination="-1" eventType="touchUpInside" id="jnd-sS-Baw"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gou_fangkuang.png" translatesAutoresizingMaskIntoConstraints="NO" id="QmY-G8-vLP">
+                    <rect key="frame" x="17" y="205" width="15" height="15"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFc-7g-Ygb">
+                    <rect key="frame" x="17" y="199" width="106" height="30"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="readedAndAdmitBtn:" destination="-1" eventType="touchUpInside" id="U0M-QM-zzz"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="《金e融服务与收费规则》" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DU4-VM-toQ">
+                    <rect key="frame" x="123" y="202" width="145" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.1764705882" green="0.56078431370000004" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="温馨提示" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWP-hf-fme">
+                    <rect key="frame" x="36" y="280" width="145" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.1764705882" green="0.56078431370000004" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我已阅读并同意" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDX-0t-uHR">
+                    <rect key="frame" x="40" y="202" width="91" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zo6-kz-fXN" customClass="MyButton">
+                    <rect key="frame" x="10" y="237" width="300" height="33"/>
+                    <state key="normal" title="充值">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="rechargeBtnPreseed:" destination="-1" eventType="touchUpInside" id="SKB-Ry-Vae"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gantanhao_small_blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="pu8-Fx-K6g">
+                    <rect key="frame" x="20" y="284" width="12" height="12"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wenhao_small_blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jx7-4S-mtu">
+                    <rect key="frame" x="20" y="309" width="12" height="12"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="充值遇到问题" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icr-wK-7E4">
+                    <rect key="frame" x="36" y="304" width="145" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.1764705882" green="0.56078431370000004" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="circle.png" width="30" height="30"/>
+        <image name="gantanhao_small_blue.png" width="24" height="24"/>
+        <image name="gou_fangkuang.png" width="30" height="30"/>
+        <image name="gou_in_circle.png" width="30" height="30"/>
+        <image name="jt_r.png" width="16" height="25"/>
+        <image name="wenhao_small_blue.png" width="24" height="24"/>
+    </resources>
+</document>

@@ -1,0 +1,91 @@
+//
+//  LCCell8.m
+//  jinerong
+//
+//  Created by carcool on 5/26/15.
+//  Copyright (c) 2015 qinyun. All rights reserved.
+//
+
+#import "LCCell8.h"
+
+@implementation LCCell8
+
+- (void)awakeFromNib {
+    // Initialization code
+    self.selectionStyle=UITableViewCellSelectionStyleNone;
+    [self setBackgroundColor:[UIColor clearColor]];
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+-(void)updateViews
+{
+    NSInteger maxNum=3;
+    if (self.expandFlag==0)
+    {
+        maxNum=3;
+    }
+    else
+    {
+        maxNum=99;
+    }
+
+    NSInteger i=0;
+    do {
+        NSDictionary *data=nil;
+        if ([self.m_aryTransfer count]>0)
+        {
+            data=[self.m_aryTransfer objectAtIndex:i];
+        }
+        else
+        {
+            data=[NSDictionary dictionaryWithObjects:@[@"无转让记录",@"",@""] forKeys:@[@"saleUser",@"buyUser",@"payAmt"]];
+        }
+        UILabel *labelLeft=[[UILabel alloc] initWithFrame:CGRectMake(14, 36+i*20, 175, 20)];
+        [labelLeft setFont:[UIFont systemFontOfSize:14.0]];
+        UIImageView *img=[[UIImageView alloc] initWithFrame:CGRectMake(93, PARENT_Y(labelLeft)+5, 5, 9)];
+        [img setImage:[UIImage imageNamed:@"triangle_r"]];
+        [self.contentBG addSubview:img];
+        if ([self.m_aryTransfer count]>0)
+        {
+            labelLeft.text=[NSString stringWithFormat:@"%ld %@",i+1,[data objectForKey:@"saleUser"]];
+        }
+        else
+        {
+            labelLeft.text=@"无转让记录";
+            img.hidden=YES;
+        }
+        [self.contentBG addSubview:labelLeft];
+        
+        UILabel *labelRight=[[UILabel alloc] initWithFrame:CGRectMake(105, 36+i*20, 100, 20)];
+        [labelRight setFont:[UIFont systemFontOfSize:14.0]];
+        [labelRight setTextColor:[UIColor blackColor]];
+        labelRight.text=[data objectForKey:@"buyUser"];
+        [self.contentBG addSubview:labelRight];
+        
+        UILabel *labelAmount=[[UILabel alloc] initWithFrame:CGRectMake(200, 36+i*20, 90, 20)];
+        [labelAmount setTextAlignment:NSTextAlignmentRight];
+        [labelAmount setFont:[UIFont systemFontOfSize:14.0]];
+        [labelAmount setTextColor:[UIColor lightGrayColor]];
+        labelAmount.text=[data objectForKey:@"payAmt"];
+        [self.contentBG addSubview:labelAmount];
+        
+        i++;
+    } while (i<self.m_aryTransfer.count&&i<maxNum);
+    
+    [self.labelExpand setFrame:CGRectMake(PARENT_X(self.labelExpand), 62+20*(i-1), 76, 20)];
+    if (self.expandFlag==0)
+    {
+        self.labelExpand.text=@"展开>>";
+    }
+    else
+    {
+        self.labelExpand.text=@"点击收起<<";
+    }
+    
+    [self.contentBG setFrame:CGRectMake(PARENT_X(self.contentBG), PARENT_Y(self.contentBG), PARENT_WIDTH(self.contentBG), 90+(i-1)*20)];
+}
+@end

@@ -1,0 +1,39 @@
+//
+//  ConfirmLCCell.h
+//  jinerong
+//
+//  Created by carcool on 6/1/15.
+//  Copyright (c) 2015 qinyun. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+@class  ConfirmLicaiVC;
+@interface ConfirmLCCell : UITableViewCell<UITextFieldDelegate,UIWebViewDelegate,NSURLConnectionDelegate>
+@property(nonatomic,retain)IBOutlet MyButton *btn;
+@property(nonatomic,retain)IBOutlet UIImageView *gouImg;
+@property(nonatomic,retain)NSDictionary *data;
+@property(nonatomic,retain)NSMutableArray *m_aryRedpackets;
+@property(nonatomic,retain)IBOutlet UILabel *labelName;
+@property(nonatomic,retain)IBOutlet UILabel *labelUid;
+@property(nonatomic,retain)IBOutlet UILabel *labelMoneyTotal;
+@property(nonatomic,retain)IBOutlet UILabel *labelRate;
+@property(nonatomic,retain)IBOutlet UILabel *labelAward;
+@property(nonatomic,retain)IBOutlet UILabel *labelTime;
+@property(nonatomic,retain)IBOutlet UILabel *labelDaysLeft;
+@property(nonatomic,retain)IBOutlet UILabel *labelRepaymentMethord;
+@property(nonatomic,retain)IBOutlet UILabel *labelExpectEarn;
+@property(nonatomic,retain)IBOutlet UILabel *labelPay;
+@property(nonatomic,retain)IBOutlet UILabel *labelRedPacket;
+@property(nonatomic,retain)IBOutlet UITextField *textFieldBid;
+@property(nonatomic,assign)ConfirmLicaiVC *delegate;
+@property(nonatomic,assign)NSInteger BidAmount;
+@property(nonatomic,assign)float expectEarn;
+@property(nonatomic,assign)float PayAmount;
+@property(nonatomic,assign)float redPacket;
+@property(nonatomic,retain)UIWebView *webView;
+@property(nonatomic,retain)NSString *nickName;
+
+
+- (IBAction)pressBtntoHtml:(id)sender;
+-(void)updateViews;
+@end

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepaymentCell" id="KGk-i7-Jjw" customClass="RepaymentCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="一次性本息" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPL-jv-QXM">
+                        <rect key="frame" x="144" y="9" width="142" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="够买房屋贷款" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7o-uJ-QVe">
+                        <rect key="frame" x="14" y="9" width="184" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jt_r.png" translatesAutoresizingMaskIntoConstraints="NO" id="oQH-DV-4cR">
+                        <rect key="frame" x="301" y="23" width="8" height="13"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IKd-rj-UV4">
+                        <rect key="frame" x="0.0" y="59" width="320" height="1"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请于2015-7-27前还款" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13B-Bi-GmH">
+                        <rect key="frame" x="130" y="30" width="156" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HK109800-9880" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQu-fG-9Id">
+                        <rect key="frame" x="14" y="30" width="156" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="labelDate" destination="13B-Bi-GmH" id="zhz-Lc-GGE"/>
+                <outlet property="labelName" destination="c7o-uJ-QVe" id="huI-Sd-ELJ"/>
+                <outlet property="labelNumber" destination="rQu-fG-9Id" id="ebj-ae-9IE"/>
+                <outlet property="labelRepaymethord" destination="wPL-jv-QXM" id="ORi-ta-Jna"/>
+                <outlet property="lineView0" destination="IKd-rj-UV4" id="r5c-j9-Nwu"/>
+            </connections>
+            <point key="canvasLocation" x="342" y="274"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="jt_r.png" width="16" height="25"/>
+    </resources>
+</document>

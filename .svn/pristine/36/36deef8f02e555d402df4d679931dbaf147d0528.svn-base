@@ -1,0 +1,31 @@
+//
+//  RepaymentCell.m
+//  jinerong
+//
+//  Created by carcool on 6/2/15.
+//  Copyright (c) 2015 qinyun. All rights reserved.
+//
+
+#import "RepaymentCell.h"
+
+@implementation RepaymentCell
+
+- (void)awakeFromNib {
+    // Initialization code
+    [MyFounctions setLineViewMoreThin:self.lineView0];
+    [self.lineView0 setBackgroundColor:JER_BG_GRAY];
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+-(void)updateViews
+{
+    self.labelName.text=[self.data objectForKey:@"projName"];
+    self.labelNumber.text=[self.data objectForKey:@"projNo"];
+    self.labelRepaymethord.text=[self.data objectForKey:@"repayType"];
+    self.labelDate.text=[self.data objectForKey:@"repayDate"];
+}
+@end

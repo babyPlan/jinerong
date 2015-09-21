@@ -1,0 +1,41 @@
+//
+//  ApplyRecordCell.m
+//  jinerong
+//
+//  Created by carcool on 6/11/15.
+//  Copyright (c) 2015 qinyun. All rights reserved.
+//
+
+#import "ApplyRecordCell.h"
+
+@implementation ApplyRecordCell
+
+- (void)awakeFromNib {
+    // Initialization code
+    [self.lineView0 setBackgroundColor:JER_BG_GRAY];
+    [MyFounctions setLineViewMoreThin:self.lineView0];
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+-(void)updateViews
+{
+    if (self.indexFlag==0)
+    {
+        self.labelMoney.text=[NSString stringWithFormat:@"借款¥%@",[self.data objectForKey:@"borrowAmt"]];
+        self.labelName.text=[self.data objectForKey:@"borrowTitle"];
+        self.labelState.text=[self.data objectForKey:@"applyStatus"];
+        self.labelTime.text=[self.data objectForKey:@"updatedOn"];
+    }
+    else
+    {
+        self.labelMoney.text=[NSString stringWithFormat:@"金额¥%@",[self.data objectForKey:@"crowdfundingAmt"]];
+        self.labelName.text=[self.data objectForKey:@"crowdfundingName"];
+        self.labelState.text=[self.data objectForKey:@"status"];
+        self.labelTime.text=[self.data objectForKey:@"updatedOn"];
+    }
+}
+@end

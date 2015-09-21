@@ -1,0 +1,44 @@
+//
+//  TRansactionCell.m
+//  jinerong
+//
+//  Created by carcool on 6/2/15.
+//  Copyright (c) 2015 qinyun. All rights reserved.
+//
+
+#import "TRansactionCell.h"
+
+@implementation TRansactionCell
+
+- (void)awakeFromNib {
+    // Initialization code
+    [self.lineView0 setBackgroundColor:JER_BG_GRAY];
+    [MyFounctions setLineViewMoreThin:self.lineView0];
+    self.selectionStyle=UITableViewCellSelectionStyleNone;
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+-(void)updateViews
+{
+    self.labelID.text=@"无返回";
+    self.labelName.text=[self.data objectForKey:@"tradingPurpose"];
+    self.labelTime.text=[self.data objectForKey:@"tradingTime"];
+    self.labelMoneyBalance.text=[NSString stringWithFormat:@"账户余额：%.2f",[[self.data objectForKey:@"availableAmount"] floatValue]];
+    
+    if ([[self.data objectForKey:@"accountWay"] isEqualToString:@"IN"])
+    {
+        self.labelMoneyTransaction.text=[NSString stringWithFormat:@"+%.2f",[[self.data objectForKey:@"tradingAmount"] floatValue]];
+        [self.labelMoneyTransaction setTextColor:JER_GREEN];
+    }
+    else
+    {
+        self.labelMoneyTransaction.text=[NSString stringWithFormat:@"-%.2f",[[self.data objectForKey:@"tradingAmount"] floatValue]];
+        [self.labelMoneyTransaction setTextColor:JER_RED];
+    }
+    
+}
+@end

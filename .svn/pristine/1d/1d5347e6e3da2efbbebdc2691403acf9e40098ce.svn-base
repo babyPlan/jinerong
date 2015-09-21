@@ -1,0 +1,37 @@
+//
+//  ZCListCell.m
+//  jinerong
+//
+//  Created by carcool on 5/26/15.
+//  Copyright (c) 2015 qinyun. All rights reserved.
+//
+
+#import "ZCListCell.h"
+
+@implementation ZCListCell
+@synthesize data;
+- (void)awakeFromNib {
+    // Initialization code
+    self.selectionStyle=UITableViewCellSelectionStyleNone;
+    [self setBackgroundColor:[UIColor clearColor]];
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+-(void)updateViews
+{
+    self.labelName.text=[data objectForKey:@"crowdfundingName"];
+    self.labelDays.text=[NSString stringWithFormat:@"%d天",[[data objectForKey:@"leftDays"] integerValue]];
+    self.labelDealRate.text=[NSString stringWithFormat:@"%d％",[[data objectForKey:@"progress"] integerValue]];
+    self.labelMoney.text=[NSString stringWithFormat:@"¥%.2f",[[data objectForKey:@"crowdfundingAmt"] floatValue]-[[data objectForKey:@"balanceAmt"] floatValue]];
+    self.labelPeople.text=[NSString stringWithFormat:@"%d",[[data objectForKey:@"supportNum"] integerValue]];
+    
+    [MyFounctions setPercentGrayview:self.grayView redView:self.redView percent:[[data objectForKey:@"progress"] integerValue]];
+    
+    [self.img setWebImageViewWithURL:[NSURL URLWithString:[self.data objectForKey:@"crowdfundingPicSmall"]]];
+}
+
+@end

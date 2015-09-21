@@ -1,0 +1,447 @@
+//
+//  LicaiDetailVC.m
+//  jinerong
+//
+//  Created by carcool on 5/25/15.
+//  Copyright (c) 2015 qinyun. All rights reserved.
+//
+
+#import "LicaiDetailVC.h"
+#import "LCCell0.h"
+#import "LCCell1.h"
+#import "LCCell2.h"
+#import "LCCell2expand.h"
+#import "LCCell3.h"
+#import "LCCell3expand.h"
+#import "LCCell4.h"
+#import "LCCell5.h"
+#import "LCCell6.h"
+#import "LCCell7.h"
+#import "LCCell8.h"
+#import "LCCell9.h"
+#import "ConfirmLicaiVC.h"
+@interface LicaiDetailVC ()
+
+@end
+
+@implementation LicaiDetailVC
+@synthesize m_showedDatas,projNo,data;
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    self.title=@"详细信息";
+    [self setLeftNaviBtnImage:[UIImage imageNamed:@"back"]];
+    [self.leftNaviBtn addTarget:self action:@selector(popSelfViewContriller) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self addTableView];
+    [self.m_tableView setFrame:CGRectMake(0, 0, Screen_Width, Screen_Height-64-49)];
+    [self.m_tableView setBackgroundColor:[UIColor clearColor]];
+    
+    self.m_showedDatas=[NSMutableArray arrayWithObjects:@"LCCell0",@"LCCell1",@"LCCell2",@"LCCell3",@"LCCell4",@"LCCell5",@"LCCell6",@"LCCell7",@"LCCell8",@"LCCell9", nil];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+-(void)updateData
+{
+    NSMutableDictionary *paras_fource = [[NSMutableDictionary alloc]initWithCapacity:10];
+    [paras_fource setObject:SH_PRODETAILS forKey:SH_LINK];
+    [paras_fource setObject:self.projNo forKey:@"projNo"];
+    self.SHRequest_ = [SHAPI requestWithParas:paras_fource];
+    [self.SHRequest_ setDelegate:self];
+    self.currentRequest=SH_PRODETAILS;
+    [self.SHRequest_ startAsynchronous];
+}
+#pragma mark ======== request delegate
+- (void)requestFinished:(ASIHTTPRequest *)request
+{
+    NSString *responseString = [request responseString];
+    NSDictionary * item = (NSDictionary *)[responseString JSONValue];
+    NSLog(@"........%@",item);
+    if ([[item objectForKey:@"result"] isEqualToString:@"0"])
+    {
+        if ([self.currentRequest isEqualToString:SH_PRODETAILS])//adver pictures
+        {
+            self.data=(NSMutableDictionary*)item;
+//            [self.data setValue:@[@{@"saleUser":@"po",@"buyUser":@"my",@"payAmt":@"1000"},@{@"saleUser":@"po",@"buyUser":@"my",@"payAmt":@"1000"},@{@"saleUser":@"po",@"buyUser":@"my",@"payAmt":@"1000"},@{@"saleUser":@"po",@"buyUser":@"my",@"payAmt":@"1000"},@{@"saleUser":@"po",@"buyUser":@"my",@"payAmt":@"1000"}] forKey:@"assignmentList"];
+            [self.m_tableView reloadData];
+        }
+        
+    }
+    else if ([[item objectForKey:@"result"] isEqualToString:@"1"])
+    {
+        NSString *alertString = [item objectForKey:@"tip"];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertString message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+}
+- (void)failWithError:(NSError *)theError
+{
+    NSLog(@"error :%@",theError);
+}
+
+#pragma mark --------------table view delegate and data source
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 10;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row==0)
+    {
+        LCCell0 *cell=[[[NSBundle mainBundle] loadNibNamed:@"LCCell0" owner:nil options:nil] objectAtIndex:0];
+        cell.data=[self.data objectForKey:@"project"];
+        [cell updateViews];
+        return cell;
+    }
+    else if (indexPath.row==1)
+    {
+        LCCell1 *cell=[[[NSBundle mainBundle] loadNibNamed:@"LCCell1" owner:nil options:nil] objectAtIndex:0];
+        cell.data=[self.data objectForKey:@"project"];
+        [cell updateViews];
+        return cell;
+    }
+    else if (indexPath.row==2)
+    {
+        if ([[self.m_showedDatas objectAtIndex:2] isEqualToString:@"LCCell2"])
+        {
+            LCCell2 *cell=[[[NSBundle mainBundle] loadNibNamed:@"LCCell2" owner:nil options:nil] objectAtIndex:0];
+            cell.data=self.data;
+            [cell updateViews];
+             return cell;
+        }
+        else
+        {
+            LCCell2expand *cell=[[[NSBundle mainBundle] loadNibNamed:@"LCCell2expand" owner:nil options:nil] objectAtIndex:0];
+            cell.data=self.data;
+            [cell updateViews];
+            return cell;
+        }
+        
+       
+    }
+    else if (indexPath.row==3)
+    {
+        if ([[self.m_showedDatas objectAtIndex:3] isEqualToString:@"LCCell3"])
+        {
+            LCCell3 *cell=[[[NSBundle mainBundle] loadNibNamed:@"LCCell3" owner:nil options:nil] objectAtIndex:0];
+            return cell;
+        }
+        else
+        {
+            LCCell3expand *cell=[[[NSBundle mainBundle] loadNibNamed:@"LCCell3expand" owner:nil options:nil] objectAtIndex:0];
+            return cell;
+        }
+        
+    }
+    else if (indexPath.row==4)
+    {
+        LCCell4 *cell=[[[NSBundle mainBundle] loadNibNamed:@"LCCell4" owner:nil options:nil] objectAtIndex:0];
+        cell.contentSrt=[[self.data objectForKey:@"project"] objectForKey:@"borrowDesc"];
+        if ([[self.m_showedDatas objectAtIndex:4] isEqualToString:@"LCCell4"])
+        {
+            cell.expandFlag=0;
+        }
+        else
+        {
+            cell.expandFlag=1;
+        }
+        [cell updateViews];
+        return cell;
+    }
+    else if (indexPath.row==5)
+    {
+        LCCell5 *cell=[[[NSBundle mainBundle] loadNibNamed:@"LCCell5" owner:nil options:nil] objectAtIndex:0];
+        //cell.data=[self.data objectForKey:@"authRecords"];
+        //[cell updateViews];
+        return cell;
+    }
+    else if (indexPath.row==6)
+    {
+        LCCell6 *cell=[[[NSBundle mainBundle] loadNibNamed:@"LCCell6" owner:nil options:nil] objectAtIndex:0];
+        cell.contentSrt=[[self.data objectForKey:@"project"] objectForKey:@"riskControlDesc"];
+        if ([[self.m_showedDatas objectAtIndex:6] isEqualToString:@"LCCell6"])
+        {
+            cell.expandFlag=0;
+        }
+        else
+        {
+            cell.expandFlag=1;
+        }
+        [cell updateViews];
+        return cell;
+    }
+    else if (indexPath.row==7)
+    {
+        LCCell7 *cell=[[[NSBundle mainBundle] loadNibNamed:@"LCCell7" owner:nil options:nil] objectAtIndex:0];
+        cell.m_aryBids=[self.data objectForKey:@"investings"];
+        if ([[self.m_showedDatas objectAtIndex:7] isEqualToString:@"LCCell7"])
+        {
+            cell.expandFlag=0;
+        }
+        else
+        {
+            cell.expandFlag=1;
+        }
+        [cell updateViews];
+        return cell;
+    }
+    else if (indexPath.row==8)
+    {
+        LCCell8 *cell=[[[NSBundle mainBundle] loadNibNamed:@"LCCell8" owner:nil options:nil] objectAtIndex:0];
+        cell.m_aryTransfer=[self.data objectForKey:@"assignmentList"];
+        if ([[self.m_showedDatas objectAtIndex:8] isEqualToString:@"LCCell8"])
+        {
+            cell.expandFlag=0;
+        }
+        else
+        {
+            cell.expandFlag=1;
+        }
+        [cell updateViews];
+        return cell;
+    }
+    else if (indexPath.row==9)
+    {
+        LCCell9 *cell=[[[NSBundle mainBundle] loadNibNamed:@"LCCell9" owner:nil options:nil] objectAtIndex:0];
+        cell.delegate=self;
+        return cell;
+    }
+    else
+    {
+        return [[UITableViewCell alloc] init];
+    }
+    
+    
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    float height=0;
+    if (indexPath.row==0)
+    {
+        height=110;
+    }
+    else if (indexPath.row==1)
+    {
+         height=145;
+    }
+    else if (indexPath.row==2)
+    {
+        if ([[self.m_showedDatas objectAtIndex:2] isEqualToString:@"LCCell2"])
+        {
+            height=170;
+        }
+        else
+        {
+            NSInteger authArray=[[self.data objectForKey:@"authRecords"] count];
+            if (authArray>0)
+            {
+                height=455+(authArray-1)*25;
+            }
+            else
+            {
+                height=455;
+            }
+            
+        }
+        
+    }
+    else if (indexPath.row==3)
+    {
+        if ([[self.m_showedDatas objectAtIndex:3] isEqualToString:@"LCCell3"])
+        {
+            height=115;
+        }
+        else
+        {
+            height=220;
+        }
+    }
+    else if (indexPath.row==4)
+    {
+        float textHeight=[MyFounctions calculateLabelHeightWithString:[[self.data objectForKey:@"project"] objectForKey:@"borrowDesc"] Width:278 font:[UIFont systemFontOfSize:14.0]];
+        if ([[self.m_showedDatas objectAtIndex:4] isEqualToString:@"LCCell4"])
+        {
+            height=43+18+10+21+5;
+        }
+        else
+        {
+            height=43+textHeight+10+21+5;
+        }
+    }
+    else if (indexPath.row==5)
+    {
+        height=170;
+    }
+    else if (indexPath.row==6)
+    {
+        float textHeight=[MyFounctions calculateLabelHeightWithString:[[self.data objectForKey:@"project"] objectForKey:@"riskControlDesc"] Width:278 font:[UIFont systemFontOfSize:14.0]];
+        if ([[self.m_showedDatas objectAtIndex:6] isEqualToString:@"LCCell6"])
+        {
+            height=43+18+10+21+5;
+        }
+        else
+        {
+            height=43+textHeight+10+21+5;
+        }
+    }
+    else if (indexPath.row==7)
+    {
+        if ([[self.data objectForKey:@"investings"] count]<=1)
+        {
+            height=100;
+        }
+        else
+        {
+            if ([[self.m_showedDatas objectAtIndex:7] isEqualToString:@"LCCell7"])
+            {
+                NSInteger maxNum=[[self.data objectForKey:@"investings"] count];
+                height=100+((maxNum>3?3:maxNum)-1)*20;
+            }
+            else
+            {
+                height=100+([[self.data objectForKey:@"investings"] count]-1)*20;
+            }
+            if (height<100)
+            {
+                height=100;
+            }
+        }
+        
+    }
+    else if (indexPath.row==8)
+    {
+        if ([[self.m_showedDatas objectAtIndex:8] isEqualToString:@"LCCell8"])
+        {
+            NSInteger maxNum=[[self.data objectForKey:@"assignmentList"] count];
+            height=100+((maxNum>3?3:maxNum)-1)*20;
+        }
+        else
+        {
+            height=100+([[self.data objectForKey:@"assignmentList"] count]-1)*20;
+        }
+        if (height<100)
+        {
+            height=100;
+        }
+    }
+    else if (indexPath.row==9)
+    {
+        height=55;
+    }
+    return height;
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
+{
+    return 1;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.row==2)
+    {
+        if ([[self.m_showedDatas objectAtIndex:2] isEqualToString:@"LCCell2"])
+        {
+            [self.m_showedDatas replaceObjectAtIndex:2 withObject:@"LCCell2expand"];
+        }
+        else
+        {
+            [self.m_showedDatas replaceObjectAtIndex:2 withObject:@"LCCell2"];
+        }
+        [self.m_tableView reloadData];
+    }
+    else if(indexPath.row==3)
+    {
+        if ([[self.m_showedDatas objectAtIndex:3] isEqualToString:@"LCCell3"])
+        {
+            [self.m_showedDatas replaceObjectAtIndex:3 withObject:@"LCCell3expand"];
+        }
+        else
+        {
+            [self.m_showedDatas replaceObjectAtIndex:3 withObject:@"LCCell3"];
+        }
+        [self.m_tableView reloadData];
+    }
+    else if (indexPath.row==4)
+    {
+        if ([[self.m_showedDatas objectAtIndex:4] isEqualToString:@"LCCell4"])
+        {
+            [self.m_showedDatas replaceObjectAtIndex:4 withObject:@"LCCell4expand"];
+        }
+        else
+        {
+            [self.m_showedDatas replaceObjectAtIndex:4 withObject:@"LCCell4"];
+        }
+        [self.m_tableView reloadData];
+    }
+    else if (indexPath.row==6)
+    {
+        if ([[self.m_showedDatas objectAtIndex:6] isEqualToString:@"LCCell6"])
+        {
+            [self.m_showedDatas replaceObjectAtIndex:6 withObject:@"LCCell6expand"];
+        }
+        else
+        {
+            [self.m_showedDatas replaceObjectAtIndex:6 withObject:@"LCCell6"];
+        }
+        [self.m_tableView reloadData];
+    }
+    else if(indexPath.row==7)
+    {
+        if ([[self.m_showedDatas objectAtIndex:7] isEqualToString:@"LCCell7"])
+        {
+            [self.m_showedDatas replaceObjectAtIndex:7 withObject:@"LCCell7expand"];
+        }
+        else
+        {
+            [self.m_showedDatas replaceObjectAtIndex:7 withObject:@"LCCell7"];
+        }
+        [self.m_tableView reloadData];
+    }
+    else if(indexPath.row==8)
+    {
+        if ([[self.m_showedDatas objectAtIndex:8] isEqualToString:@"LCCell8"])
+        {
+            [self.m_showedDatas replaceObjectAtIndex:8 withObject:@"LCCell8expand"];
+        }
+        else
+        {
+            [self.m_showedDatas replaceObjectAtIndex:8 withObject:@"LCCell8"];
+        }
+        [self.m_tableView reloadData];
+    }
+
+}
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+#pragma mark ----- event response
+-(void)bidTheItem
+{
+    if([[MyFounctions getUserInfo] objectForKey:@"mobileNo"])
+    {
+        ConfirmLicaiVC *vc=[[ConfirmLicaiVC alloc] init];
+        vc.projNo=[[self.data objectForKey:@"project"] objectForKey:@"projectNo"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else
+    {
+        LoginVC *vc=[[LoginVC alloc] init];
+        [self presentViewController:[[JERNavigationController alloc] initWithRootViewController:vc] animated:YES completion:^{
+            
+        }];
+    }
+}
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

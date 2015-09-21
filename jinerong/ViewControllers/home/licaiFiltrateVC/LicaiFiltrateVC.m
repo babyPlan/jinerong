@@ -1,0 +1,228 @@
+//
+//  LicaiFiltrateVC.m
+//  jinerong
+//
+//  Created by carcool on 6/7/15.
+//  Copyright (c) 2015 qinyun. All rights reserved.
+//
+
+#import "LicaiFiltrateVC.h"
+#import "LicaiFiltrateCell.h"
+#import "LicaiFiltrateCell1.h"
+#import "LicaiListVC.h"
+@interface LicaiFiltrateVC ()
+
+@end
+
+@implementation LicaiFiltrateVC
+@synthesize m_aryFiltrateItems,m_aryTitles,m_arySelectedIndex;
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    self.title=@"理财筛选";
+    [self.bg removeFromSuperview];
+    [self.view insertSubview:self.bg atIndex:0];
+    [self setLeftNaviBtnImage:[UIImage imageNamed:@"back"]];
+    [self.leftNaviBtn addTarget:self action:@selector(popSelfViewContriller) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.m_aryFiltrateItems=[NSMutableArray arrayWithObjects:@[@"全部",@"项目散标",@"债权转让"],@[@"全部",@"信用贷",@"抵押贷",@"担保贷",@"其他"],@[@"全部",@"0-3个月",@"6个月",@"9个月",@"12个月",@">12个月"],@[@"全部",@"<6%",@"6%-10%",@"11%-15%",@"16%-20%",@"21%-24%",@">24%"],nil];
+    self.m_aryTitles=[NSMutableArray arrayWithObjects:@"投资类型",@"项目类型",@"项目期数",@"项目利率", nil];
+    self.m_arySelectedIndex=[NSMutableArray arrayWithObjects:@"0",@"0",@"0",@"0",nil];
+    
+    [self addTableView];
+    [self.m_tableView setFrame:CGRectMake(0, 0, Screen_Width, Screen_Height-64-49)];
+    [self.m_tableView setBackgroundColor:[UIColor clearColor]];
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+#pragma mark --------------table view delegate and data source
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 5;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row<4)
+    {
+        LicaiFiltrateCell *cell=[tableView dequeueReusableCellWithIdentifier:@"LicaiFiltrateCell"];
+        if(cell==nil)
+        {
+            cell=[[[NSBundle mainBundle] loadNibNamed:@"LicaiFiltrateCell" owner:nil options:nil] objectAtIndex:0];
+        }
+        cell.title=[self.m_aryTitles objectAtIndex:indexPath.row];
+        cell.data=[self.m_aryFiltrateItems objectAtIndex:indexPath.row];
+        cell.selectedIndexStr=[self.m_arySelectedIndex objectAtIndex:indexPath.row];
+        cell.indexCell=indexPath.row;
+        
+        cell.delegate=self;
+        [cell updateViews];
+        
+        return cell;
+    }
+    else
+    {
+        LicaiFiltrateCell1 *cell=[tableView dequeueReusableCellWithIdentifier:@"LicaiFiltrateCell1"];
+        if(cell==nil)
+        {
+            cell=[[[NSBundle mainBundle] loadNibNamed:@"LicaiFiltrateCell1" owner:nil options:nil] objectAtIndex:0];
+            cell.delegate=self;
+        }
+        return cell;
+    }
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    float height=0;
+    if (indexPath.row<4)
+    {
+        NSArray *ary=[self.m_aryFiltrateItems objectAtIndex:indexPath.row];
+        height=80+(26+10)*((ary.count-1)/4);
+    }
+    else
+    {
+        height=50;
+    }
+    return height;
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
+{
+    return 1;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+}
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+#pragma mark ------ event response
+-(void)filtrateBtnPressed
+{
+    NSMutableDictionary *filtrateData=[NSMutableDictionary dictionary];
+    NSInteger i=0;
+    for (NSString *selected in self.m_arySelectedIndex)
+    {
+        if (i==0)//investType
+        {
+            if ([selected integerValue]==0)
+            {
+                [filtrateData setObject:@"" forKey:@"investType"];
+            }
+            else
+            {
+                [filtrateData setObject:selected forKey:@"investType"];
+            }
+            
+        }
+        else if (i==1)//projectType
+        {
+            if ([selected integerValue]==0)
+            {
+                [filtrateData setObject:@"" forKey:@"projectType"];
+            }
+            else if([selected integerValue]==1)
+            {
+                [filtrateData setObject:@"CREDIT" forKey:@"projectType"];
+            }
+            else if([selected integerValue]==2)
+            {
+                [filtrateData setObject:@"GUARANTEE" forKey:@"projectType"];
+            }
+            else if([selected integerValue]==3)
+            {
+                [filtrateData setObject:@"MORTGAGE" forKey:@"projectType"];
+            }
+            else if([selected integerValue]==4)
+            {
+                [filtrateData setObject:@"OTHER" forKey:@"projectType"];
+            }
+        }
+        else if (i==2)//projectPeriod
+        {
+            if ([selected integerValue]==0)
+            {
+                [filtrateData setObject:@"" forKey:@"projectPeriod"];
+            }
+            else if([selected integerValue]==1)
+            {
+                [filtrateData setObject:@"0_3" forKey:@"projectPeriod"];
+            }
+            else if([selected integerValue]==2)
+            {
+                [filtrateData setObject:@"6" forKey:@"projectPeriod"];
+            }
+            else if([selected integerValue]==3)
+            {
+                [filtrateData setObject:@"9" forKey:@"projectPeriod"];
+            }
+            else if([selected integerValue]==4)
+            {
+                [filtrateData setObject:@"12" forKey:@"projectPeriod"];
+            }
+            else if([selected integerValue]==5)
+            {
+                [filtrateData setObject:@"12#" forKey:@"projectPeriod"];
+            }
+
+        }
+        else if (i==3)//projectRate
+        {
+            if ([selected integerValue]==0)
+            {
+                [filtrateData setObject:@"" forKey:@"projectRate"];
+            }
+            else if([selected integerValue]==1)
+            {
+                [filtrateData setObject:@"#6" forKey:@"projectRate"];
+            }
+            else if([selected integerValue]==2)
+            {
+                [filtrateData setObject:@"6_10" forKey:@"projectRate"];
+            }
+            else if([selected integerValue]==3)
+            {
+                [filtrateData setObject:@"11_15" forKey:@"projectRate"];
+            }
+            else if([selected integerValue]==4)
+            {
+                [filtrateData setObject:@"16_20" forKey:@"projectRate"];
+            }
+            else if([selected integerValue]==5)
+            {
+                [filtrateData setObject:@"21_24" forKey:@"projectRate"];
+            }
+            else if([selected integerValue]==6)
+            {
+                [filtrateData setObject:@"24#" forKey:@"projectRate"];
+            }
+            
+        }
+
+        i++;
+    }
+    
+    for (NSString *key in [filtrateData allKeys])
+    {
+        [self.delegate.m_dicTypes setObject:[filtrateData objectForKey:key] forKey:key];
+    }
+    
+    self.delegate.pageIndex=1;
+    [self.delegate updateData];
+    [self popSelfViewContriller];
+    
+}
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

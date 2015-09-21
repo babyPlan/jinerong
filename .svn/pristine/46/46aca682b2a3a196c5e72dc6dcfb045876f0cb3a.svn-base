@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PayVC">
+            <connections>
+                <outlet property="btn" destination="JTM-5W-TyW" id="NOj-gV-MCC"/>
+                <outlet property="labelBalence" destination="6c6-Ua-3gm" id="P1t-0a-Zyl"/>
+                <outlet property="labelPayAmount" destination="YXu-7n-Fkz" id="6KK-rX-Qcv"/>
+                <outlet property="textFieldBG" destination="a9V-hX-MPY" id="3kD-2e-RAM"/>
+                <outlet property="textFieldPayPassword" destination="9so-4R-Asu" id="8AO-Ta-wxI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DY093209-023" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvg-za-kZ3">
+                    <rect key="frame" x="10" y="8" width="145" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="房屋抵押，资金周转" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOt-8J-eUJ">
+                    <rect key="frame" x="10" y="30" width="188" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="¥13,000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXu-7n-Fkz">
+                    <rect key="frame" x="169" y="19" width="143" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" red="0.92156862750000001" green="0.4431372549" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TTG-HM-B7Y">
+                    <rect key="frame" x="0.0" y="64" width="320" height="40"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gou_in_circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="K7c-cX-uQL">
+                            <rect key="frame" x="14" y="12" width="15" height="15"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="账户余额 ¥15,000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6c6-Ua-3gm">
+                            <rect key="frame" x="37" y="9" width="188" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="充值" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gt-R4-X4e">
+                            <rect key="frame" x="260" y="9" width="52" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.2274509804" green="0.61176470589999998" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kdA-zm-a3D">
+                    <rect key="frame" x="0.0" y="118" width="320" height="60"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="你还没有银行卡，请点击添加" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gd-AI-fa6">
+                            <rect key="frame" x="0.0" y="35" width="320" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kju-gK-F0l">
+                            <rect key="frame" x="147" y="8" width="27" height="25"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a9V-hX-MPY">
+                    <rect key="frame" x="0.0" y="193" width="320" height="40"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="支付密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9X-cj-k5W">
+                            <rect key="frame" x="10" y="9" width="63" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入支付密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9so-4R-Asu">
+                            <rect key="frame" x="74" y="5" width="238" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTM-5W-TyW" customClass="MyButton">
+                    <rect key="frame" x="10" y="255" width="300" height="33"/>
+                    <state key="normal" title="确定">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="DoneBtnPressed:" destination="-1" eventType="touchUpInside" id="xAc-Oo-Iun"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="359" y="262"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="add.png" width="54" height="50"/>
+        <image name="gou_in_circle.png" width="30" height="30"/>
+    </resources>
+</document>

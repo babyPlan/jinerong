@@ -1,0 +1,28 @@
+//
+//  PaySuccessForZhongchouVC.h
+//  jinerong
+//
+//  Created by carcool on 6/5/15.
+//  Copyright (c) 2015 qinyun. All rights reserved.
+//
+
+#import "JERViewController.h"
+
+@interface PaySuccessForZhongchouVC : JERViewController
+@property(nonatomic,retain)NSDictionary* data;
+@property (weak, nonatomic) IBOutlet UILabel *projectName;
+@property (weak, nonatomic) IBOutlet UILabel *projectId;
+@property (weak, nonatomic) IBOutlet UILabel *supportMoney;
+@property (weak, nonatomic) IBOutlet UILabel *sendMoney;
+@property (weak, nonatomic) IBOutlet UILabel *returnTime;
+@property (weak, nonatomic) IBOutlet UILabel *recivePerson;
+@property (weak, nonatomic) IBOutlet UILabel *mobileNo;
+@property (weak, nonatomic) IBOutlet UILabel *reciveArea;
+@property (weak, nonatomic) IBOutlet UILabel *adressDetail;
+@property (weak, nonatomic) IBOutlet UILabel *dealTime;
+@property (weak, nonatomic) IBOutlet UILabel *dealWay;
+@property (weak, nonatomic) IBOutlet UILabel *dealStatus;
+@property (weak, nonatomic) IBOutlet UILabel *dealMoney;
+
+
+@end

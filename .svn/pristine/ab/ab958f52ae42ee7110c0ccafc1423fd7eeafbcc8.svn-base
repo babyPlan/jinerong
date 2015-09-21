@@ -1,0 +1,45 @@
+//
+//  ZhongchouShowDetailVCViewController.m
+//  jinerong
+//
+//  Created by zhaoml on 15/7/23.
+//  Copyright (c) 2015年 qinyun. All rights reserved.
+//
+
+#import "ZhongchouShowDetailVCViewController.h"
+
+@interface ZhongchouShowDetailVCViewController ()
+
+@end
+
+@implementation ZhongchouShowDetailVCViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.title=@"项目详情";
+    [self setLeftNaviBtnImage:[UIImage imageNamed:@"back"]];
+    [self.leftNaviBtn addTarget:self action:@selector(popSelfViewContriller) forControlEvents:UIControlEventTouchUpInside];
+
+    // Do any additional setup after loading the view from its nib.
+    
+    [self addTableView];
+    [self.m_tableView setFrame:CGRectMake(0, 0, Screen_Width, Screen_Height-64-49)];
+    [self.m_tableView setBackgroundColor:[UIColor clearColor]];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

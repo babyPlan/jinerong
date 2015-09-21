@@ -1,0 +1,32 @@
+//
+//  LCCell1.m
+//  jinerong
+//
+//  Created by carcool on 5/25/15.
+//  Copyright (c) 2015 qinyun. All rights reserved.
+//
+
+#import "LCCell1.h"
+
+@implementation LCCell1
+@synthesize data;
+- (void)awakeFromNib {
+    // Initialization code
+    self.selectionStyle=UITableViewCellSelectionStyleNone;
+    [self setBackgroundColor:[UIColor clearColor]];
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+-(void)updateViews
+{
+    self.labelMethord.text=[data objectForKey:@"repaymentTypeDesc"];
+    self.labelMoney.text=[NSString stringWithFormat:@"¥%@",[data objectForKey:@"balanceAmt"]];
+    self.labelTime.text=[data objectForKey:@"saleoutTime"];
+    self.labelPercent.text= [NSString stringWithFormat:@"%d％",[[data objectForKey:@"progress"] integerValue]];
+    [MyFounctions setPercentGrayview:self.grayView redView:self.redView percent:[[data objectForKey:@"progress"] integerValue]];
+}
+@end

@@ -1,0 +1,47 @@
+//
+//  ZCRewardCell.m
+//  jinerong
+//
+//  Created by carcool on 5/26/15.
+//  Copyright (c) 2015 qinyun. All rights reserved.
+//
+
+#import "ZCRewardCell.h"
+
+@implementation ZCRewardCell
+
+- (void)awakeFromNib {
+    // Initialization code
+    self.selectionStyle=UITableViewCellSelectionStyleNone;
+    [self setBackgroundColor:[UIColor clearColor]];
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+-(void)updateViews
+{
+    self.labelMoney.text=[NSString stringWithFormat:@"¥%.2f",[[self.data objectForKey:@"supportAmt"] floatValue]];
+    self.labelName.text=[self.data objectForKey:@"supportDesc"];
+    self.labelContent.text=[self.data objectForKey:@"supportDesc"];
+    NSInteger total=[[self.data objectForKey:@"supportTotal"] integerValue];
+    NSInteger num=[[self.data objectForKey:@"supportedNum"] integerValue];
+    self.labelTotal.text=[NSString stringWithFormat:@"限额%ld位，剩余%ld位",(long)total,total-num];
+    self.labelNum.text=[NSString stringWithFormat:@"%ld位已参与",(long)num];
+    
+    //update cell height
+    float textHeight=[MyFounctions calculateLabelHeightWithString:self.labelContent.text Width:280 font:[UIFont systemFontOfSize:14.0]];
+    [self.labelContent setFrame:CGRectMake(PARENT_X(self.labelContent), PARENT_Y(self.labelContent), PARENT_WIDTH(self.labelContent), textHeight)];
+    [self.labelTotal setFrame:CGRectMake(PARENT_X(self.labelTotal), PARENT_Y(self.labelContent)+PARENT_HEIGHT(self.labelContent)+10, PARENT_WIDTH(self.labelTotal), PARENT_HEIGHT(self.labelTotal))];
+    [self.labelNum setFrame:CGRectMake(PARENT_X(self.labelNum), PARENT_Y(self.labelContent)+PARENT_HEIGHT(self.labelContent)+10, PARENT_WIDTH(self.labelNum), PARENT_HEIGHT(self.labelNum))];
+    [self.peopleImg setFrame:CGRectMake(PARENT_X(self.peopleImg), PARENT_Y(self.labelContent)+PARENT_HEIGHT(self.labelContent)+15, PARENT_WIDTH(self.peopleImg), PARENT_HEIGHT(self.peopleImg))];
+    [self.viewBG setFrame:CGRectMake(PARENT_X(self.viewBG), PARENT_Y(self.viewBG), PARENT_WIDTH(self.viewBG),PARENT_Y(self.labelTotal)+PARENT_HEIGHT(self.labelTotal)+10)];
+
+}
+-(IBAction)support:(id)sender
+{
+    [self.delegate supportTheZhongchou:self.indexSupport];
+}
+@end

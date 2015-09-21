@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransactionRecordsVC">
+            <connections>
+                <outlet property="imgDate" destination="CFp-cV-989" id="sQD-xx-cQ7"/>
+                <outlet property="imgType" destination="TYZ-Gi-dBN" id="KBD-9K-3ml"/>
+                <outlet property="labelDate" destination="vtX-j1-CWu" id="qrq-ZQ-t43"/>
+                <outlet property="labelType" destination="o4G-9k-mna" id="5Sz-dT-Dhb"/>
+                <outlet property="lineView0" destination="aix-DV-Vjf" id="dIa-R3-sss"/>
+                <outlet property="menuFlitrateView" destination="6RC-Al-438" id="TkO-tL-ffl"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hiB-VS-Koj">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="交易日期" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtX-j1-CWu">
+                            <rect key="frame" x="35" y="16" width="63" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="交易类型" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4G-9k-mna">
+                            <rect key="frame" x="190" y="16" width="63" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jt_down_gray.png" translatesAutoresizingMaskIntoConstraints="NO" id="CFp-cV-989">
+                            <rect key="frame" x="110" y="24" width="11" height="6"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jt_down_gray.png" translatesAutoresizingMaskIntoConstraints="NO" id="TYZ-Gi-dBN">
+                            <rect key="frame" x="267" y="24" width="11" height="6"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHp-9v-DEh">
+                            <rect key="frame" x="0.0" y="0.0" width="160" height="45"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="MenuBtnPressed:" destination="-1" eventType="touchUpInside" id="4Nf-VG-91T"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKK-rJ-9Gg">
+                            <rect key="frame" x="160" y="0.0" width="160" height="45"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="MenuBtnPressed:" destination="-1" eventType="touchUpInside" id="tCR-A0-sia"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aix-DV-Vjf">
+                            <rect key="frame" x="0.0" y="44" width="320" height="1"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="225" y="328"/>
+        </view>
+        <view contentMode="scaleToFill" id="6RC-Al-438" customClass="TransactionRecordsMenuView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gmT-ZM-OPx">
+                    <rect key="frame" x="80" y="5" width="1" height="15"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xXZ-qC-wIq">
+                    <rect key="frame" x="160" y="5" width="1" height="15"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="buq-QK-RnW">
+                    <rect key="frame" x="240" y="5" width="1" height="15"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KnY-7U-dXY">
+                    <rect key="frame" x="80" y="33" width="1" height="15"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hfd-3Q-UOO">
+                    <rect key="frame" x="160" y="33" width="1" height="15"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hnS-7N-PxT">
+                    <rect key="frame" x="240" y="33" width="1" height="15"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghe-zz-XFa">
+                    <rect key="frame" x="0.0" y="2" width="80" height="22"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="今天">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnPressed:" destination="6RC-Al-438" eventType="touchUpInside" id="c3E-A4-Pek"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4v1-yS-5dt">
+                    <rect key="frame" x="80" y="2" width="80" height="22"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="今天">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnPressed:" destination="6RC-Al-438" eventType="touchUpInside" id="z24-cm-UOc"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eym-MU-ocy">
+                    <rect key="frame" x="160" y="2" width="80" height="22"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="今天">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnPressed:" destination="6RC-Al-438" eventType="touchUpInside" id="KAe-Fc-cEU"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ksi-Yh-GGe">
+                    <rect key="frame" x="240" y="2" width="80" height="22"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="今天">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnPressed:" destination="6RC-Al-438" eventType="touchUpInside" id="ZlK-af-uE3"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQR-mY-6sY">
+                    <rect key="frame" x="1" y="30" width="80" height="22"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="今天">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnPressed:" destination="6RC-Al-438" eventType="touchUpInside" id="XFg-F2-QnG"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4h-GD-kEb">
+                    <rect key="frame" x="80" y="30" width="80" height="22"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="今天">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnPressed:" destination="6RC-Al-438" eventType="touchUpInside" id="w7C-aZ-cmQ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nN-Fr-a3t">
+                    <rect key="frame" x="161" y="30" width="80" height="22"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="今天">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnPressed:" destination="6RC-Al-438" eventType="touchUpInside" id="o6f-Fd-QU5"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVa-F8-UQI">
+                    <rect key="frame" x="240" y="30" width="80" height="22"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="今天">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnPressed:" destination="6RC-Al-438" eventType="touchUpInside" id="A7S-M7-Xnd"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="btn0" destination="ghe-zz-XFa" id="D6H-gt-nPM"/>
+                <outlet property="btn1" destination="4v1-yS-5dt" id="gbv-68-s64"/>
+                <outlet property="btn2" destination="eym-MU-ocy" id="0xX-q7-JhX"/>
+                <outlet property="btn3" destination="Ksi-Yh-GGe" id="AsE-Tq-kwA"/>
+                <outlet property="btn4" destination="vQR-mY-6sY" id="2UF-Ko-tKL"/>
+                <outlet property="btn5" destination="z4h-GD-kEb" id="Fuw-US-xh9"/>
+                <outlet property="btn6" destination="4nN-Fr-a3t" id="ESs-lU-Uan"/>
+                <outlet property="btn7" destination="kVa-F8-UQI" id="QbX-6N-ktm"/>
+                <outlet property="lineView0" destination="gmT-ZM-OPx" id="Zcl-J0-j4U"/>
+                <outlet property="lineView1" destination="xXZ-qC-wIq" id="IxC-jj-nse"/>
+                <outlet property="lineView2" destination="buq-QK-RnW" id="YsK-0u-mDH"/>
+                <outlet property="lineView3" destination="KnY-7U-dXY" id="RWy-hm-d8e"/>
+                <outlet property="lineView4" destination="Hfd-3Q-UOO" id="yB0-oI-dbE"/>
+                <outlet property="lineView5" destination="hnS-7N-PxT" id="rSw-dn-h5e"/>
+            </connections>
+            <point key="canvasLocation" x="608" y="310.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="jt_down_gray.png" width="22" height="12"/>
+    </resources>
+</document>

@@ -1,0 +1,259 @@
+//
+//  SHAPIConfig.h
+//  jinrongSohu
+//
+//  Created by luc on 14-4-9.
+//  Copyright (c) 2014年 Shang. All rights reserved.
+//
+
+#define TECH @"科技"
+#define COMMON_WEAL @"公益"
+#define CREATIVE @"创意"
+#define LIFE @"生活"
+#define ART @"艺术"
+#define AGRICULTURE @"农业"
+#define DREAMS @"梦想"
+#define OTHERS @"其它"
+
+
+//首页
+#define SH_UID @"uid"
+#define SH_PAGEFLAG @"pageFlag" //分页标记 0:不需要  1：需要
+#define SH_PAGE_CURRENTPAGE @"page.currentPage" //第几页
+#define SH_PAGE_RECORDSPERPAGE @"page.recordsPerPage" //每页数目
+
+//接口
+#define SH_LINK @"link" //
+#define SH_HOME @"mobile/getInvestProjects.action"
+#define SH_PRODETAILS @"mobile/getProjectDetail.action" //投资项目详情
+#define SH_ProductListByType @"mobile/queryInvestProjects.action"//筛选标的
+//investType			投资类型，
+//””=全部
+//1=项目散标
+//2=债权转让
+//projectType			项目类型，
+//””=全部
+//3=信用标
+//2=抵押标
+//1=担保标
+//99=其他
+//projectPeriod			项目期限，
+//””=全部
+//0_3=0-3个月
+//6=6个月
+//9=9个月
+//12=12个月
+//12#=>12个月
+//projectRate			项目利率，
+//””=全部
+//#6=6%
+//6-10=6%-10%
+//11-15=11%-15%
+//16-20=16%-20%
+//21-24=21%-24%
+//24#=>24%
+//creditLevel			信用等级，
+//“”=全部
+//AA=AA
+//A=A
+//B=B
+//C=C
+//D=D
+//E=E
+//HR=HR
+#define SH_GetPayBidWeb @"mobile_se/invest.action"//投标支付
+#define SH_ApplyBorrow @"mobile_se/borrow/apply.action"//借款
+//		//按月还息，到期还本
+//		FIRST_INTEREST_LAST_CAPITAL(1,"按月还息，到期还本"),
+//		//等额本息
+//		EQUAL_CAPTICAL_INTEREST(2,"等额本息"),
+//		//一次性还本息
+//		ONETINE_CAPITAL_INTEREST(3,"一次性还本息");
+#define SH_BorrowPre @"mobile/getBorrowApplyPre.action"//借款准备
+
+
+//众筹
+#define SH_ZhongChouList @"mobile/getCrowdFundings.action"
+#define SH_ZhongchouDetail @"mobile/getCrowdFundingDetail.action" //众筹项目详情
+#define SH_FiltrateZhongchou @"mobile/queryCrowdFundings.action" //众筹筛选
+//TECH(1,"科技"),
+//COMMON_WEAL(2,"公益"),
+//CREATIVE(3,"创意"),
+//LIFE(4,"生活"),
+//ART(5,"艺术"),
+//AGRICULTURE(6,"农业"),
+//DREAMS(7,"梦想"),
+//OTHERS(99,"其它");
+#define SH_SurpportZhongchou @"mobile_se/supportCrowdFunding.action" //支持众筹
+#define SH_LaunchZhongchou @"mobile_se/applyCrowdFunding.action" //发起众筹
+//PAY_BACK_INVESTOR(1,"给以投资人回报"),
+//REFUND_INVESTOR(2,"给以投资人退款");
+
+//user
+#define SH_LOGIN @"mobile/login.action"//登录
+#define SH_REGISTER @"mobile/register.action"//注册
+#define SH_GetVerifyCode @"mobile/sendVerifyCode.action"//验证码
+#define SH_CheckVerifyCode @"/mobile/checkVerifyCode.action"//验证验证码
+#define SH_UserAccountMoney @"mobile_se/getAccountProfile.action"//账户简况
+#define SH_ModifyLoginPassword @"mobile_se/updateLoginPwd.action"//修改登录密码
+#define SH_ModifyPayPassword @"mobile_se/updatePayPwd.action"//修改支付密码
+#define SH_ForgetPassword @"mobile/resetpassword.action" // 忘记密码接口
+#define SH_UploadPortrait @"mobile/uploadPic.action" // 上传头像
+//修改绑定手机号
+#define SH_VerifyPasswordForModifyPhone @"mobile_se/checkPasswordForUpdateBindMobile.action" //校验密码
+#define SH_ModifyPhone @"mobile_se/updateBindMobile.action" //修改绑定手机
+//获取全国地址列表
+#define SH_GetRegions @"mobile/getRegions.action"
+//我的投资
+#define SH_MyInvestList @"mobile_se/getMyInvestings.action" // 我的投资列表
+#define SH_MyInvestDetail @"mobile_se/getMyInvestingDetail.action" // 我的投资详情
+#define SH_MySupportList @"mobile_se/getMySupports.action" // 我的支持众筹列表
+//我的还款
+#define SH_MyRepaymentList @"mobile_se/getRepayments.action" //还款列表
+#define SH_RepatmentDetail @"mobile_se/getRepaymentDetail.action" //还款详情
+#define SH_Repay @"mobile_se/repay.action" //还款
+//借款和众筹申请记录
+#define SH_GetMyFunds @"mobile_se/getMyFunds.action" //我的众筹记录
+#define SH_GetMyBorrows @"mobile_se/getMyBorrows.action" //我的借款记录
+//wallet
+#define SH_RechargePreData @"mobile_se/getRechargePre.action"//充值前准备数据
+#define SH_Recharge @"mobile_se/recharge.action"//充值
+#define SH_GetCashPreData @"mobile_se/getWithdrawPre.action"//提现准备
+#define SH_GetCash @"mobile_se/withdraw.action"//提现
+#define SH_GetCashBanks @"mobile/getBanks.action"//提现绑定银行列表
+#define SH_BindBankCard @"mobile_se/bindBankCard.action"//绑定银行卡（提现）
+//红包
+#define SH_GetRedPackets @"mobile_se/red_packet/getRedPacket.action"
+#define SH_FEEDBACK @"mobile_se/feedback.action"
+#define SH_INVESTINGS @"mobile_se/getinvestings.action"
+#define SH_TRANSRECORDS @"mobile_se/queryTransRecords.action"//交易记录
+///*
+// * 充值
+// */
+//CHARGE(1,"充值"),
+///*
+// * 提现
+// */
+//DEPOSIT(2,"提现"),
+///*
+// * 投资
+// */
+//INVEST(3,"投资"),
+///*
+// * 回收本金
+// */
+//CAPITAL_RETURN(4,"回收本金"),
+///*
+// * 回收利息
+// */
+//INTEREST_RETURN(5,"回收利息"),
+///*
+// *收益复投
+// */
+//REINVEST(6,"收益复投 "),
+///*
+// * 回收罚息
+// */
+//Recovery_punitive_interest(7,"回收罚息"),
+///*
+// * 赎回投资
+// */
+//Foreclosure_Investing(8,"赎回投资"),
+//
+//Get_advance_funds(9,"获得垫付资金"),//获得垫付资金
+//Buying_debt(10,"买入债权"),//买入债权
+///*
+// *  手续费
+// */
+//FEE(11,"手续费"),
+///*
+// * 投资中冻结金额
+// */
+//Frozen_Invest(12,"投资中冻结金额"),
+//
+///*
+// * 提现中冻结金额
+// */
+//Frozen_Withdraw(13,"提现中冻结金额"),
+//
+///*
+// * 赠送奖金
+// */
+//Bonus(14,"赠送奖金"),
+//
+///*
+// * 流标退款
+// */
+//REFUND(15,"流标退款"),
+//
+///*
+// * 还款
+// */
+//REPAYMENT(16,"还款"),
+//
+///*
+// * 借款人获得借款金额
+// */
+//B_BORROW_AMT(50,"借款金");
+
+#define SH_STATISTICS @"mobile_se/getassetstatistics.action"
+#define SH_CAROUSELS @"mobile/getcarousels.action"
+#define SH_INVESTING @"mobile_se/getinvesting.action"
+
+#define SH_SENDVERIFY @"mobile/sendverifycode.action"
+
+
+
+#define SH_BUYPAGE @"mobile_se/toBuyPage.action"//投资请求
+#define SH_SENDBUYSMS @"mobile_se/sendBuySms.action"//投资验证短信
+#define SH_BUY @"mobile_se/buy.action" //购买请求
+#define SH_TOAUTOCONFIG @"mobile_se/toAutoConfigPage.action" //自动投标获取
+#define SH_UPDATEAUTOCONFIG @"mobile_se/updateAutoConfig.action"//自动投标设置
+
+//add by yh 充值
+#define SH_InMoney @"mobile_se/createOrderPage.action"
+
+
+
+
+
+//MY页面提现按钮
+#define SH_Submit @"mobile_se/withdrawGetPreInfo.action"
+
+//实名认证认证请求按钮
+//#define SH_AuthUrl @"mobile_se/confirmName.action"
+#define SH_AuthUrl @"mobile_se/authenticateRealName.action"
+
+//打开 “账户提款” 页面请求数据，返回结果包括 真实姓名，身份证号，可提现金额，已绑定银行卡数组
+
+//#define SH_WithdrawPage @"mobile_se/withdrawPage.action"
+
+
+
+
+
+#define SH_WithdrawPage @"mobile_se/bankAccountGetAddPreInfo.action"
+
+
+
+#define SH_WithdrawPageB  @"mobile_se/getAccountBankList.action"
+
+
+
+//”添加银行卡“ 页面 “提交绑定” 按钮事件
+//#define SH_AddBankCard @"mobile_se/addBankCard.action"
+
+#define SH_AddBankCard @"mobile_se/addBankAccount.action"
+
+// "账户提款" 页面 “提交” 按钮事件
+//#define SH_WithdrawApply @"mobile_se/withdrawApply.action"
+
+#define SH_WithdrawApply @"mobile_se/withdrawConfirm.action"
+
+
+// 表视图删除银行卡事件
+#define SH_DeleteBankCard @"mobile_se/deleteBankCard.action"
+
+
+//online
+//#define HOSTSERVER : @"/"

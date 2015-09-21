@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyMoneyVC">
+            <connections>
+                <outlet property="labelAvailable" destination="ulQ-e1-KNg" id="zHd-8j-tjw"/>
+                <outlet property="labelYesterday" destination="f9a-qG-bWF" id="Xe4-si-bbD"/>
+                <outlet property="labeltotalEarn" destination="ZK6-pH-go7" id="lec-Wr-nD9"/>
+                <outlet property="lineView0" destination="Nic-eC-AO1" id="HeJ-fA-nmi"/>
+                <outlet property="lineView1" destination="OrE-cA-hyS" id="80V-sY-pSd"/>
+                <outlet property="lineView2" destination="K2t-ip-aHq" id="Cr8-ht-7QJ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vZa-aL-h2W">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nic-eC-AO1">
+                            <rect key="frame" x="10" y="70" width="300" height="1"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="昨日收益（元）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhq-ha-Idy">
+                            <rect key="frame" x="37" y="8" width="86" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="可用余额（元）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQf-Nq-K5R">
+                            <rect key="frame" x="37" y="82" width="99" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="累计收益（元）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LnE-gc-oul">
+                            <rect key="frame" x="174" y="8" width="86" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9a-qG-bWF">
+                            <rect key="frame" x="37" y="37" width="127" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="0.89411764709999997" green="0.18039215689999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulQ-e1-KNg">
+                            <rect key="frame" x="37" y="108" width="263" height="35"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                            <color key="textColor" red="0.89411764709999997" green="0.18039215689999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZK6-pH-go7">
+                            <rect key="frame" x="174" y="36" width="138" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="0.89411764709999997" green="0.18039215689999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hA-89-CKg">
+                            <rect key="frame" x="0.0" y="150" width="160" height="40"/>
+                            <state key="normal" title="充值">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="ButtonPressed:" destination="-1" eventType="touchUpInside" id="U9T-2B-wfv"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="na6-Vg-vUq">
+                            <rect key="frame" x="160" y="150" width="160" height="40"/>
+                            <state key="normal" title="提现">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="ButtonPressed:" destination="-1" eventType="touchUpInside" id="Evp-f2-9YH"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K2t-ip-aHq">
+                            <rect key="frame" x="163" y="155" width="1" height="30"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tVm-jH-IJZ">
+                    <rect key="frame" x="0.0" y="210" width="320" height="80"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OrE-cA-hyS">
+                            <rect key="frame" x="0.0" y="40" width="320" height="1"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="P2P自动投标" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9VM-7g-gTD">
+                            <rect key="frame" x="23" y="8" width="144" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jt_r.png" translatesAutoresizingMaskIntoConstraints="NO" id="8YM-GS-b0n">
+                            <rect key="frame" x="299" y="12" width="8" height="13"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="交易记录" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhs-QN-ZkE">
+                            <rect key="frame" x="23" y="53" width="144" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jt_r.png" translatesAutoresizingMaskIntoConstraints="NO" id="DBb-xl-7Tp">
+                            <rect key="frame" x="299" y="57" width="8" height="13"/>
+                        </imageView>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wow-Pw-Nsa">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="ButtonPressed:" destination="-1" eventType="touchUpInside" id="W7Y-GA-xwl"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJp-ct-ZwJ">
+                            <rect key="frame" x="0.0" y="42" width="320" height="39"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="ButtonPressed:" destination="-1" eventType="touchUpInside" id="JfQ-kK-9b2"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="jt_r.png" width="16" height="25"/>
+    </resources>
+</document>

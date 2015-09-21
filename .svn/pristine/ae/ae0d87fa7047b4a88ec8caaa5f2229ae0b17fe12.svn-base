@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BankListCell" id="KGk-i7-Jjw" customClass="BankListCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sG5-uU-XJF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="adver.png" translatesAutoresizingMaskIntoConstraints="NO" id="UXd-EQ-oky">
+                        <rect key="frame" x="16" y="12" width="35" height="35"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="中国工商银行" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJc-GE-B8f">
+                        <rect key="frame" x="71" y="19" width="208" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Ow-HJ-QDl">
+                        <rect key="frame" x="291" y="22" width="15" height="15"/>
+                    </imageView>
+                </subviews>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imgGou" destination="2Ow-HJ-QDl" id="JOq-mO-Qb5"/>
+                <outlet property="labelName" destination="BJc-GE-B8f" id="LlC-86-OZ5"/>
+                <outlet property="lineView0" destination="sG5-uU-XJF" id="izG-rh-8vn"/>
+            </connections>
+            <point key="canvasLocation" x="350" y="242"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="adver.png" width="640" height="230"/>
+        <image name="circle.png" width="30" height="30"/>
+    </resources>
+</document>

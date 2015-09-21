@@ -1,0 +1,47 @@
+//
+//  MyZhongchouCell.m
+//  jinerong
+//
+//  Created by carcool on 6/2/15.
+//  Copyright (c) 2015 qinyun. All rights reserved.
+//
+
+#import "MyZhongchouCell.h"
+
+@implementation MyZhongchouCell
+
+- (void)awakeFromNib {
+    // Initialization code
+    [self setBackgroundColor:[UIColor clearColor]];
+    self.selectionStyle=UITableViewCellSelectionStyleNone;
+    
+   // [self.labelName setFrame:CGRectMake(PARENT_X(self.labelName), PARENT_Y(self.labelName), [MyFounctions calculateTextWidth:[self.data objectForKey:@"foundName"] font:[UIFont systemFontOfSize:12.0]], PARENT_HEIGHT(self.labelName))];
+    
+    //[self.labelTime setFrame:CGRectMake(PARENT_X(self.labelTime)+[MyFounctions calculateTextWidth:[self.data objectForKey:@"foundName"] font:[UIFont systemFontOfSize:12.0]], PARENT_Y(self.labelTime), PARENT_WIDTH(self.labelTime), PARENT_HEIGHT(self.labelTime))];
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+- (void)updateViews{
+    self.labelName.text=[NSString stringWithFormat:@"%@", [self.data objectForKey:@"fundName"]];
+    self.labelMoney.text=[NSString stringWithFormat:@"￥%@", [self.data objectForKey:@"supportAmt" ]];
+    self.labelTime.text=[self.data objectForKey:@"supportDate"];
+    self.labelRate.text=[NSString stringWithFormat:@"%@%%",[self.data objectForKey:@"progress"]];
+    
+//    NSURL* url =[NSURL URLWithString:[self.data objectForKey:@"fundPicUrl"]];
+//    NSData* picData = [NSData dataWithContentsOfURL:url];
+//    self.imageHead.image=[[UIImage alloc]initWithData:picData];
+    [self.imageHead setWebImageViewWithURL:[NSURL URLWithString:[self.data objectForKey:@"fundPicUrl"]]];
+    
+    if (![self.data objectForKey:@"expressNo"]&&[self.data objectForKey:@"expressCompany"]) {
+        self.labelKuai.text=[NSString stringWithFormat:@"%@(%@)",[self.data objectForKey:@"expressNo"],[self.data objectForKey:@"expressCompany"]];
+    }else{
+        self.labelKuai.text=@"暂无";
+    }
+    
+}
+
+@end

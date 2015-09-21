@@ -1,0 +1,48 @@
+//
+//  PrefixHeader.pch
+//  jinerong
+//
+//  Created by carcool on 5/25/15.
+//  Copyright (c) 2015 qinyun. All rights reserved.
+//
+
+#ifndef jinerong_PrefixHeader_pch
+#define jinerong_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif
+
+//#define HOSTSERVER @"http://192.168.11.86/invest/"
+//#define HOSTSERVER @"http://192.168.11.86:8080/invest/"//local
+//#define HOSTSERVER @"http://192.168.11.116:8080/invest/"//cx
+#define HOSTSERVER @"http://www.efin5.com/invest/"//test net
+//size
+#define Screen_Width  [UIScreen mainScreen].bounds.size.width
+#define Screen_Height  [UIScreen mainScreen].bounds.size.height
+#define SP [UIScreen mainScreen].bounds.size.width/320.0
+#define SP_WIDTH(_x) [UIScreen mainScreen].bounds.size.width-2*_x
+#define PARENT_WIDTH(parent) parent.frame.size.width
+#define PARENT_HEIGHT(parent) parent.frame.size.height
+#define PARENT_X(parent) parent.frame.origin.x
+#define PARENT_Y(parent) parent.frame.origin.y
+#define UINavigationBarHeight [UINavigationBar appearance].frame.size.height
+
+#define KEYBOARD_HEIGHT (216+40)
+#define KEYBOARD_HEIGHT_FOR_TEXTVIEW (216+60)
+//color
+#define JER_RED [UIColor colorWithRed:255/255.0 green:122/255.0 blue:118/255.0 alpha:1]
+#define JER_BLUE [UIColor colorWithRed:65/255.0 green:170/255.0 blue:242/255.0 alpha:1]
+#define JER_BG_GRAY [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1]
+#define JER_GREEN [UIColor colorWithRed:0/255.0 green:178/255.0 blue:0/255.0 alpha:1]
+//head file
+#import "MyFounctions.h"
+#import "MyButton.h"
+#import "NSObject+SBJson.h"
+#import "SDRefresh.h"
+//page scrollview
+#import "ImagePlayerView.h"
+#import "WebImageViewNormal.h"
+#import "LoginVC.h"
+#import "JERNavigationController.h"

@@ -1,0 +1,30 @@
+//
+//  LCCell9.m
+//  jinerong
+//
+//  Created by carcool on 5/26/15.
+//  Copyright (c) 2015 qinyun. All rights reserved.
+//
+
+#import "LCCell9.h"
+
+@implementation LCCell9
+
+- (void)awakeFromNib {
+    // Initialization code
+    self.selectionStyle=UITableViewCellSelectionStyleNone;
+    [self setBackgroundColor:[UIColor clearColor]];
+    [self.btn setColor:JER_RED];
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+#pragma mark ------ event response
+-(IBAction)btnPressed:(id)sender
+{
+    [self.delegate bidTheItem];
+}
+@end

@@ -1,0 +1,86 @@
+//
+//  LicaiFiltrateCell.m
+//  jinerong
+//
+//  Created by carcool on 6/7/15.
+//  Copyright (c) 2015 qinyun. All rights reserved.
+//
+
+#import "LicaiFiltrateCell.h"
+#import "LicaiFiltrateVC.h"
+@implementation LicaiFiltrateCell
+@synthesize title,data;
+- (void)awakeFromNib {
+    // Initialization code
+    [self setBackgroundColor:[UIColor clearColor]];
+    self.selectionStyle=UITableViewCellSelectionStyleNone;
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+-(void)updateViews
+{
+    //clear the old data
+    if (self.m_aryBtns.count>0)
+    {
+        for (UIButton *btn in self.m_aryBtns)
+        {
+            [btn removeFromSuperview];
+        }
+        [self.m_aryBtns removeAllObjects];
+    }
+    else
+    {
+        self.m_aryBtns=[NSMutableArray array];
+    }
+    self.labelTitle.text=self.title;
+    
+    float btnWidth=(Screen_Width-50)/4.0;
+    NSInteger i=0;
+    while (i<self.data.count)
+    {
+        UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
+        btn.tag=i;
+        [btn setFrame:CGRectMake(10+(i%4)*(btnWidth+10),40+i/4*(26+10), btnWidth, 26)];
+        [btn.layer setBorderWidth:0.5];
+        [btn.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
+        [btn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        [btn.titleLabel setFont:[UIFont systemFontOfSize:12.0]];
+        [btn setTitle:[self.data objectAtIndex:i] forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(btnPressed:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self addSubview:btn];
+        [self.m_aryBtns addObject:btn];
+        
+        i++;
+    }
+    NSLog(@"self.selectedIndexStr :%@",self.selectedIndexStr);
+    [self setbtnSelected:[self.selectedIndexStr integerValue]];
+}
+-(void)setbtnSelected:(NSInteger)index
+{
+    UIButton *btn=[self.m_aryBtns objectAtIndex:index];
+    [btn setBackgroundColor:JER_RED];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+}
+-(IBAction)btnPressed:(id)sender
+{
+    
+    for (UIButton *btn in self.m_aryBtns)
+    {
+        [btn setBackgroundColor:[UIColor clearColor]];
+        [btn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    }
+    
+    UIButton *btn=(UIButton*)sender;
+    [btn setBackgroundColor:JER_RED];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+
+    self.selectedIndexStr=[NSString stringWithFormat:@"%d",btn.tag];
+    [self.delegate.m_arySelectedIndex replaceObjectAtIndex:self.indexCell withObject:self.selectedIndexStr];
+    NSLog(@"self.delegate.m_arySelectedIndex :%@",self.delegate.m_arySelectedIndex);
+}
+@end
